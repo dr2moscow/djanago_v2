@@ -1,4 +1,2 @@
 # djanago_v2
-GeekBrains
-Факультет Python
-Курс Django
+GeekBrains / Факультет Python / Курс Django
