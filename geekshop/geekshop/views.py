@@ -2,7 +2,9 @@ from django.shortcuts import render
 
 
 def index(request):
+    title = 'Контакты'
     context = {
+        'title': title,
         'slogan': 'супер предложения',
     }
 
