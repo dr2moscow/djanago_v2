@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from geekshop.views import index, contact
+from geekshop.views import index, contacts
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('products/', include('mainapp.urls')),
-    path('', index),
-    path('contact/', contact),
+    path('products/', include('mainapp.urls', namespace = 'products'), name = 'products'),
+    path('', index, name = 'index'),
+    path('contacts/', contacts, name = 'contacts'),
 ]
