@@ -1,4 +1,4 @@
-import json
+# import json
 from django.shortcuts import render
 from mainapp.models import Product, ProductCategory
 

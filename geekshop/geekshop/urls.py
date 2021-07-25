@@ -19,12 +19,13 @@ from django.contrib import admin
 from django.urls import path, include
 
 from geekshop.views import index, contacts
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('products/', include('mainapp.urls', namespace='products'), name='products'),
-    path('', index, name='index'),
-    path('contacts/', contacts, name='contacts')
+    path('', views.index, name='index'),
+    path('products/', include('mainapp.urls', namespace='products'), name='index'),
+    path('contacts/', views.contacts, name='contacts')
 ]
 
 if settings.DEBUG:
