@@ -4,20 +4,20 @@ from mainapp.models import Product, ProductCategory
 
 
 def index(request):
-    title = 'Каталог'
+    title = 'каталог'
 
-    # with open('mainapp/templates/mainapp/json/categories.json', encoding='utf-8') as json_file:
+    # with open('mainapp/json/categories_menu.json', encoding='utf-8') as json_file:
     #    links_menu = json.load(json_file)
 
-    # links_menu = [
-    #     {'href': '', 'name': 'все'},
-    #     {'href': 'products_home', 'name': 'дом'},
-    #     {'href': 'products_office', 'name': 'офис'},
-    #     {'href': 'products_modern', 'name': 'модерн'},
-    #     {'href': 'products_classic', 'name': 'классика'},
-    # ]
+    links_menu = [
+        {'href': '', 'name': 'все'},
+        {'href': 'products_home', 'name': 'дом'},
+        {'href': 'products_office', 'name': 'офис'},
+        {'href': 'products_modern', 'name': 'модерн'},
+        {'href': 'products_classic', 'name': 'классика'},
+    ]
 
-    links_menu = ProductCategory.objects.all()
+    # links_menu = ProductCategory.objects.all()
 
     products = Product.objects.all()[:4]
 
