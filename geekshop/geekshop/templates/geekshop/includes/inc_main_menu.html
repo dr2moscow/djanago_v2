@@ -8,8 +8,16 @@
         <li>
             <a href="{% url 'auth:edit' %}">
                 {{ user.first_name|default:'Пользователь' }}
+
+            </a>
+            <a href="{% url 'basket:view' %}" >
+                <span>
+<!--                    КОРЗИНА: {% if basket %} {{ basket|length }} {% endif %}-->
+                    КОРЗИНА: {{ basket.0.total_cost|floatformat:0 }} руб. ({{ basket.0.total_quantity }} шт.)
+                </span>
             </a>
         </li>
+
         {% endif %}
         <li>
             {% if user.is_authenticated %}
@@ -19,5 +27,5 @@
             {% endif %}
         </li>
     </ul>
-    <a href="#" class="search"></a>
+<!--<a href="#" class="search"></a>    -->
 </div>
