@@ -21,6 +21,7 @@ parts/
 sdist/
 var/
 venv/
+newenv/
 wheels/
 share/python-wheels/
 *.egg-info/
