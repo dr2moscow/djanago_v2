@@ -1,10 +1,12 @@
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
+from mainapp.views import get_basket
+
 
 def index(request):
-    title = 'Контакты'
+    title = 'магазин'
     context = {
         'title': title,
+        'basket': get_basket(request.user),
         'slogan': 'супер предложения',
     }
 
@@ -12,4 +14,9 @@ def index(request):
 
 
 def contacts(request):
-    return render(request, 'geekshop/contact.html')
+    title = 'контакты'
+    context = {
+        'title': title,
+        'basket': get_basket(request.user),
+    }
+    return render(request, 'geekshop/contact.html', context)

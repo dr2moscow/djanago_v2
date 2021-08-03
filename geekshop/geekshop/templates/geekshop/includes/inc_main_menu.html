@@ -1,3 +1,4 @@
+
 <div class="header clearfix">
     <a href="{% url 'index' %}" class="logo"></a>
     <ul class="menu">
@@ -12,8 +13,10 @@
             </a>
             <a href="{% url 'basket:view' %}" >
                 <span>
-<!--                    КОРЗИНА: {% if basket %} {{ basket|length }} {% endif %}-->
-                    КОРЗИНА: {{ basket.0.total_cost|floatformat:0 }} руб. ({{ basket.0.total_quantity }} шт.)
+                    {% if basket %}
+                        {{ basket.0.total_cost|floatformat:0 }} руб
+                        ({{ basket.0.total_quantity }} шт )
+                    {% endif %}
                 </span>
             </a>
         </li>
@@ -27,5 +30,5 @@
             {% endif %}
         </li>
     </ul>
-<!--<a href="#" class="search"></a>    -->
+<!--    <a href="#" class="search"></a>-->
 </div>
